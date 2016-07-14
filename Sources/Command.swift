@@ -1,8 +1,8 @@
 /// A simple CommandType using a closure
 struct AnonymousCommand : CommandType {
-  var closure:ArgumentParser throws -> ()
+  var closure:(ArgumentParser) throws -> ()
 
-  init(_ closure:(ArgumentParser throws -> ())) {
+  init(_ closure:((ArgumentParser) throws -> ())) {
     self.closure = closure
   }
 

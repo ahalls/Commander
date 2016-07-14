@@ -99,13 +99,13 @@ public class Group : CommandType {
 }
 
 extension Group {
-  public convenience init(@noescape closure: (Group) -> ()) {
+  public convenience init( closure: @noescape(Group) -> ()) {
     self.init()
     closure(self)
   }
 
   /// Add a sub-group using a closure
-  public func group(_ name: String, _ description: String? = nil, @noescape closure: (Group) -> ()) {
+  public func group(_ name: String, _ description: String? = nil, closure: @noescape(Group) -> ()) {
     addCommand(name: name, description, Group(closure: closure))
   }
 }
